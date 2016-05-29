@@ -27,6 +27,9 @@
 
 on boot
 
+# Fingerprint
+    mkdir /data/fpc 0700 system system
+
     export LD_SHIM_LIBS "/system/bin/mm-qcamera-daemon|libshim_camera.so:/system/vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so"
     
     # Notification LED
@@ -43,3 +46,8 @@ service SensorCali /system/bin/SensorCali
     disabled
     on property:ril.sensor_read="right"
     start SensorCali
+
+service fingerprintd /system/bin/fingerprintd
+    class late_start
+    socket fpce stream 0666 system system
+    user system

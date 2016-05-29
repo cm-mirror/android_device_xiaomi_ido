@@ -200,6 +200,11 @@
 /dev/vm_bms               0660   system     system
 /dev/battery_data         0660   system     system
 
+# fpc Fingerprint
+/sys/devices/soc.0/fpc_fpc1020*             hw_reset       0220   system     system
+/sys/devices/soc.0/fpc_fpc1020*             irq            0660   system     system
+/sys/devices/soc.0/fpc_fpc1020*             wakeup_enable  0220   system     system
+
 # wlan
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system
