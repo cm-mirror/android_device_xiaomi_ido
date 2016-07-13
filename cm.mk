@@ -1,19 +1,20 @@
-$(call inherit-product, device/xiaomi/ido/full_ido.mk)
-
-## Specify phone tech before including full_phone
-$(call inherit-product, vendor/cm/config/gsm.mk)
-
-# Release name
-PRODUCT_RELEASE_NAME := ido
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-TARGET_BOARD_PLATFORM_VARIANT := msm8939
+# Inherit from kenzo device
+$(call inherit-product, device/xiaomi/ido/device.mk)
 
-## Device identifier. This must come after all inclusions
+# Set those variables here to overwrite the inherited values.
+BOARD_VENDOR := Xiaomi
+PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := ido
 PRODUCT_NAME := cm_ido
-PRODUCT_BRAND := xiaomi
-PRODUCT_MODEL := ido
-PRODUCT_MANUFACTURER := xiaomi
+PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_MODEL := Redmi 3
+TARGET_VENDOR := Xiaomi
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
