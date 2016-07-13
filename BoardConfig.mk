@@ -69,7 +69,6 @@ BOARD_CUSTOM_BOOTIMG_MK := device/xiaomi/ido/mkbootimg.mk
 TARGET_INIT_VENDOR_LIB := libinit_msm8916
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8916
-TARGET_LIBINIT_MSM8916_DEFINES_FILE := device/xiaomi/ido/init/init_ido.cpp
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
