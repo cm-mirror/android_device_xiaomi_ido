@@ -21,10 +21,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from tomato device
 $(call inherit-product, device/xiaomi/ido/device.mk)
 
-# DTB
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/dt.img:dt.img
-
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := ido
 PRODUCT_NAME := full_ido
