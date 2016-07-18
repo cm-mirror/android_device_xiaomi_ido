@@ -64,7 +64,6 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_USES_UNCOMPRESSED_KERNEL := true
 TARGET_KERNEL_CONFIG := wt88509_64-perf_defconfig
-BOARD_CUSTOM_BOOTIMG_MK := device/xiaomi/ido/mkbootimg.mk
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm8916
