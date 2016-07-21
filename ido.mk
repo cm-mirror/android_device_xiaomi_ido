@@ -1,5 +1,7 @@
 LOCAL_PATH := device/xiaomi/ido
 
+$(call inherit-product, device/qcom/common/Android.mk)
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 

@@ -1,3 +1,7 @@
+BOARD_VENDOR := xiaomi
+
+IDO_PATH := device/xiaomi/ido
+
 USE_CAMERA_STUB := true
 # Architecture
 TARGET_ARCH := arm64
@@ -30,10 +34,13 @@ USE_CUSTOM_AUDIO_POLICY := 1
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xiaomi/ido/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(IDO_PATH)/bluetooth
 
-# CMHW
-BOARD_HARDWARE_CLASS += device/xiaomi/ido/cmhw
+# CM Hardware
+BOARD_USES_CYANOGEN_HARDWARE = true
+BOARD_HARDWARE_CLASS += \
+    $(IDO_PATH)/cmhw \
+    hardware/cyanogen/cmhw
 
 # Display
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
@@ -53,7 +60,7 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 # Kernel
 BOARD_DTBTOOL_ARGS := -2
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := console=115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
+BOARD_KERNEL_CMDLINE := console=115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x02000000
@@ -84,6 +91,7 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
 
 # fix this up by examining /proc/mtd on a running device
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 34197504
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1610612736
@@ -101,7 +109,7 @@ TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Recovery
 TARGET_RECOVERY_DENSITY := xhdpi
-TARGET_RECOVERY_FSTAB := device/xiaomi/ido/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(IDO_PATH)/rootdir/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := RGB_565
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
@@ -130,7 +138,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/ido
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += device/xiaomi/ido
+BOARD_SEPOLICY_DIRS += $(IDO_PATH)/sepolicy
 
 # inherit from the proprietary version
 -include vendor/xiaomi/ido/BoardConfigVendor.mk
