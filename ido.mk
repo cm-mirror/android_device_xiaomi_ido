@@ -34,6 +34,12 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_BOOT_JARS += qcmediaplayer
 
+# ANT+
+PRODUCT_PACKAGES += \
+    AntHalService \
+    com.dsi.ant.antradio_library \
+    libantradio
+
 # Audio
 PRODUCT_PACKAGES += \
     audiod \

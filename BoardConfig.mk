@@ -4,6 +4,10 @@ IDO_PATH := device/xiaomi/ido
 
 USE_CAMERA_STUB := true
 BLOCK_BASED_OTA := false
+
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -111,6 +115,9 @@ MALLOC_IMPL := dlmalloc
 TARGET_HAVE_SIGNED_VENUS_FW := true
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+
+# PowerHAL
+TARGET_POWERHAL_VARIANT := qcom
 
 # Recovery
 TARGET_RECOVERY_DENSITY := xhdpi
