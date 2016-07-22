@@ -3,6 +3,7 @@ BOARD_VENDOR := xiaomi
 IDO_PATH := device/xiaomi/ido
 
 USE_CAMERA_STUB := true
+BLOCK_BASED_OTA := false
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
