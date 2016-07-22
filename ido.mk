@@ -30,6 +30,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:system/etc/permissions/android.hardware.sensor.stepdetector.xml
 
+PRODUCT_BOOT_JARS += qcmediaplayer
+
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
@@ -60,6 +62,13 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     memtrack.msm8916
 
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    camera2.portability.force_api=1
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
@@ -69,6 +78,10 @@ PRODUCT_PACKAGES += \
     e2fsck \
     make_ext4fs \
     setup_fs
+
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.msm8916
 
 # Media
 PRODUCT_COPY_FILES += \
