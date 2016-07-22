@@ -87,8 +87,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/ft5x06_ts.kl:system/usr/keylayout/ft5x06_ts.kl \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    $(LOCAL_PATH)/keylayout/synaptics_dsx.idc:system/usr/idc/synaptics_dsx.idc \
-    $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.idc:system/usr/idc/synaptics_rmi4_i2c.idc
+    $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/idc/synaptics_dsx.kl \
+    $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/idc/synaptics_rmi4_i2c.kl
 
 # Media
 PRODUCT_COPY_FILES += \
