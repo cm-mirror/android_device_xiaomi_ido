@@ -1,2 +1,1 @@
 /dev/block/platform/msm_sdcc\.1/by-name/persist              u:object_r:persist_block_device:s0
-/sys/vibrator/pwmvalue                                       u:object_r:vibeamp_sysfs:s0
