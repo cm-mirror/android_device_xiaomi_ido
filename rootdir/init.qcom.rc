@@ -276,9 +276,6 @@ on post-fs-data
     #Create a folder for SRS to be able to create a usercfg file
     mkdir /data/data/media 0770 media media
 
-    #Create folder for qlogd
-    mkdir /data/misc/qlogd 0664
-
     #Create folder for mm-qcamera-daemon
     mkdir /data/camera 0770 media camera
 
@@ -747,11 +744,6 @@ on property:sys.boot_completed=1
     start qcom-post-boot
     start config-zram
 
-service atfwd /system/bin/ATFWD-daemon
-    class late_start
-    user system
-    group system radio
-
 service hostapd /system/bin/hostapd -dd /data/hostapd/hostapd.conf
     class late_start
     user root
@@ -831,8 +823,6 @@ service ssr_diag /system/bin/ssr_diag
     user system
     group system
     disabled
-
-
 
 service hvdcp /system/bin/hvdcp
     class core
