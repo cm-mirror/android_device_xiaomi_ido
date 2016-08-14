@@ -54,8 +54,9 @@ PRODUCT_PACKAGES += \
     tinymix
 
 PRODUCT_PACKAGES += \
-    libboringssl-compat
-
+    libboringssl-compat \
+    libstlport
+    
 # Connectivity Engine support
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
