@@ -41,6 +41,10 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(IDO_PATH)/bluetooth
 
+# Bootanimation
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+
 # CM Hardware
 BOARD_USES_CYANOGEN_HARDWARE = true
 BOARD_HARDWARE_CLASS += \
@@ -76,7 +80,7 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_USES_UNCOMPRESSED_KERNEL := true
 TARGET_KERNEL_CONFIG := wt88509_64-perf_defconfig
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x00000100
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm8916
@@ -91,6 +95,9 @@ TARGET_RIL_VARIANT := caf
 PROTOBUF_SUPPORTED := true
 TARGET_USES_QCOM_BSP     := true
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+
+# System Properties
+TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 # Flags
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
@@ -146,6 +153,9 @@ WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME := "wlan"
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/xiaomi/ido
+
+# Vold
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
