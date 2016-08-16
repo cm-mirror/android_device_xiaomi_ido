@@ -1,6 +1,7 @@
 #
 # system.prop for ido
 #
+ro.sf.lcd_density=320
 # Display
 ro.opengles.version=196609
 persist.hwc.mdpcomp.enable=true
