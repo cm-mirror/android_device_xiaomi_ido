@@ -29,6 +29,8 @@ import init.qcom.usb.rc
 import init.target.rc
 import init.qcom.factory.rc
 
+    export LD_SHIM_LIBS "/system/vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so"
+
 on early-init
     write /sys/block/mmcblk0/queue/scheduler "noop"
 
