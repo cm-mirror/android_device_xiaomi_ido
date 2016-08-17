@@ -83,12 +83,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/pp_calib_data_ili9881c_HD720p_video_Tianma.xml:system/etc/pp_calib_data_ili9881c_HD720p_video_Tianma.xml \
     $(LOCAL_PATH)/configs/pp_calib_data_nt35521s_HD720p_video_EBBG.xml:system/etc/pp_calib_data_nt35521s_HD720p_video_EBBG.xml
 
-# Filesystem
-PRODUCT_PACKAGES += \
-    e2fsck \
-    make_ext4fs \
-    setup_fs
-
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8916
@@ -126,10 +120,6 @@ PRODUCT_PACKAGES += \
 # Power HAL
 PRODUCT_PACKAGES += \
     power.msm8916
-
-# USB
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
 
 # Wifi
 PRODUCT_PACKAGES += \
