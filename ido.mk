@@ -32,8 +32,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:system/etc/permissions/android.hardware.sensor.stepdetector.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
-PRODUCT_BOOT_JARS += qcmediaplayer
-
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
@@ -53,10 +51,19 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     tinymix
 
+# Camera
 PRODUCT_PACKAGES += \
     libboringssl-compat \
-    libstlport
-    
+    libstlport \
+    Snap
+
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    camera2.portability.force_api=1
+
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 # Connectivity Engine support
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
@@ -71,16 +78,10 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     memtrack.msm8916
 
-# Camera
-PRODUCT_PACKAGES += \
-    Snap
-
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    camera2.portability.force_api=1
-
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/pp_calib_data_hx8394F_HD720p_video_BOE.xml:system/etc/pp_calib_data_hx8394F_HD720p_video_BOE.xml \
+    $(LOCAL_PATH)/configs/pp_calib_data_ili9881c_HD720p_video_Tianma.xml:system/etc/pp_calib_data_ili9881c_HD720p_video_Tianma.xml \
+    $(LOCAL_PATH)/configs/pp_calib_data_nt35521s_HD720p_video_EBBG.xml:system/etc/pp_calib_data_nt35521s_HD720p_video_EBBG.xml
 
 # Filesystem
 PRODUCT_PACKAGES += \
