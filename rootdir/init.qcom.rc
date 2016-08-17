@@ -91,8 +91,6 @@ on boot
     chmod 2770 /dev/socket/qmux_gps
 
     mkdir /persist/drm 0770 system system
-
-    setprop wifi.interface wlan0
     
  #add ota prop for mbn update 
     setprop persist.radio.start_ota_daemon 1
@@ -100,13 +98,6 @@ on boot
 #   Define TCP buffer sizes for various networks
 #   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
     setprop net.tcp.buffersize.wifi    524288,2097152,4194304,262144,524288,1048576
-
-
-    setprop ro.telephony.call_ring.multiple false
-
-    #Remove SUID bit for iproute2 ip tool
-    chmod 0755 /system/bin/ip
-
 
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
@@ -189,9 +180,6 @@ on post-fs-data
     mkdir /data/misc/camera 0770 camera camera
     setprop persist.camera.awb.ledrgshift 1
     setprop persist.camera.awb.ledbgshift 1.15
-
-    mkdir /data/media 0770 media_rw media_rw
-    chown media_rw media_rw /data/media
 
     mkdir /data/misc/ipa 0700 net_admin net_admin
 

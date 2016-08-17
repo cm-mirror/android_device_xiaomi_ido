@@ -1,7 +1,9 @@
 #
 # system.prop for ido
 #
+
 ro.sf.lcd_density=320
+ro.telephony.call_ring.multiple=false
 # Display
 ro.opengles.version=196609
 persist.hwc.mdpcomp.enable=true
@@ -14,3 +16,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/config
 
 # QC vendor extension
 ro.vendor.extension_library=libqti-perfd-client.so
+
+# Wi-Fi
+wifi.interface=wlan0
