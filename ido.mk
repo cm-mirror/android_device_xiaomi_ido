@@ -122,19 +122,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8916
 
-# Wifi
-PRODUCT_PACKAGES += \
-    libwcnss_qmi \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
-    wcnss_service \
-    libwpa_client \
-    dhcpcd.conf \
-    hostapd \
-    libxml2 \
-    wpa_supplicant \
-    wpa_supplicant.conf
-
 # Screen density
 PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -184,13 +171,25 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+    $(LOCAL_PATH)/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
+    $(LOCAL_PATH)/wifi/hostapd.conf:system/etc/hostapd/hostapd_default.conf \
+    $(LOCAL_PATH)/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny \
+    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
 PRODUCT_PACKAGES += \
     libqsap_sdk \
     libQWiFiSoftApCfg \
     libwcnss_qmi \
-    libwpa_client
+    libwpa_client \
+    wcnss_service \
+    libxml2 \
+    hostapd \
+    dhcpcd.conf \
+    wpa_supplicant \
+    wpa_supplicant.conf
+
 
 $(call inherit-product, device/qcom/common/Android.mk)
 $(call inherit-product-if-exists, vendor/xiaomi/ido/ido-vendor.mk)
