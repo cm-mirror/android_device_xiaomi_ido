@@ -1,2 +1,6 @@
 allow system_app proc_touchpanel:dir search;
 allow system_app proc_touchpanel:file rw_file_perms;
+
+# Color Calibration
+allow system_app color_device:chr_file rw_file_perms;
+allow system_app display_sysfs:file rw_file_perms;

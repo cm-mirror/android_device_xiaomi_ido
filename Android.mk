@@ -151,7 +151,8 @@ $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wcd9306; \
     ln -sf /data/misc/audio/mbhc.bin \
     $(TARGET_OUT_ETC)/firmware/wcd9306/wcd9306_mbhc.bin)
 
-#Wi-Fi links
+# Create a link for the WCNSS config file, which ends up as a writable
+# version in /data/misc/wifi
 $(shell mkdir -p $(TARGET_OUT)/etc/firmware/wlan/prima; \
     ln -sf /data/misc/wifi/WCNSS_qcom_cfg.ini \
     $(TARGET_OUT)/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini)
