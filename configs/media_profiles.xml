@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2010 The Android Open Source Project
-     Copyright (C) 2014 The Linux Foundation. All rights reserved.
+<!-- Copyright (C) 2012-2014, The Linux Foundation. All rights reserved
      Not a contribution.
+
+     Copyright (C) 2010 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -83,7 +84,7 @@
 <MediaSettings>
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <!-- Back Camera -->
-    <CamcorderProfiles cameraId="0" startOffsetMs="500">
+    <CamcorderProfiles cameraId="0" startOffsetMs="300">
 
     <EncoderProfile quality="low" fileFormat="3gp" duration="30">
       <Video codec="h264"
@@ -106,7 +107,7 @@
              frameRate="30" />
 
       <Audio codec="aac"
-             bitRate="156000"
+             bitRate="256000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
@@ -118,20 +119,6 @@
              height="288"
              frameRate="30" />
 
-      <Audio codec="amrnb"
-             bitRate="12200"
-             sampleRate="8000"
-             channels="1" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="fwvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="2000000"
-             width="864"
-             height="480"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
       <Audio codec="amrnb"
              bitRate="12200"
              sampleRate="8000"
@@ -164,6 +151,7 @@
              channels="2" />
     </EncoderProfile>
 
+
     <EncoderProfile quality="1080p" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="20000000"
@@ -172,7 +160,7 @@
              frameRate="30" />
 
       <Audio codec="aac"
-             bitRate="156000"
+             bitRate="256000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
@@ -213,7 +201,7 @@
 
       <!-- audio setting is ignored -->
       <Audio codec="aac"
-             bitRate="156000"
+             bitRate="256000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
@@ -283,7 +271,7 @@
 
       <!-- audio setting is ignored -->
       <Audio codec="aac"
-             bitRate="156000"
+             bitRate="256000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
@@ -295,7 +283,7 @@
 
     </CamcorderProfiles>
     <!-- Front Camera -->
-    <CamcorderProfiles cameraId="1" startOffsetMs="500">
+    <CamcorderProfiles cameraId="1" startOffsetMs="300">
 
     <EncoderProfile quality="low" fileFormat="3gp" duration="30">
       <Video codec="h264"
@@ -330,20 +318,6 @@
              height="288"
              frameRate="30" />
 
-      <Audio codec="amrnb"
-             bitRate="12200"
-             sampleRate="8000"
-             channels="1" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="fwvga" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="2000000"
-             width="864"
-             height="480"
-             frameRate="30" />
-
-      <!-- audio setting is ignored -->
       <Audio codec="amrnb"
              bitRate="12200"
              sampleRate="8000"
@@ -419,10 +393,10 @@
 
     <EncoderProfile quality="timelapsecif" fileFormat="mp4" duration="30">
       <Video codec="h264"
-             bitRate="1200000"
-             width="352"
-             height="288"
-             frameRate="30" />
+                   bitRate="1200000"
+                   width="352"
+                   height="288"
+                   frameRate="30" />
 
       <!-- audio setting is ignored -->
       <Audio codec="aac"
@@ -447,30 +421,30 @@
 
     <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
       <Video codec="h264"
-             bitRate="5000000"
-             width="720"
-             height="480"
-             frameRate="30" />
+                   bitRate="5000000"
+                   width="720"
+                   height="480"
+                   frameRate="30" />
 
       <!-- audio setting is ignored -->
       <Audio codec="aac"
-             bitRate="96000"
-             sampleRate="48000"
-             channels="1" />
+                   bitRate="96000"
+                   sampleRate="48000"
+                   channels="1" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapse720p" fileFormat="mp4" duration="30">
       <Video codec="h264"
-             bitRate="8000000"
-             width="1280"
-             height="720"
-             frameRate="30" />
+                   bitRate="8000000"
+                   width="1280"
+                   height="720"
+                   frameRate="30" />
 
       <!-- audio setting is ignored -->
       <Audio codec="aac"
-             bitRate="96000"
-             sampleRate="48000"
-             channels="1" />
+                   bitRate="96000"
+                   sampleRate="48000"
+                   channels="1" />
     </EncoderProfile>
 
         <ImageEncoding quality="95" />
@@ -513,7 +487,7 @@
         maxHFRMode="0"  />
 
     <AudioEncoderCap name="aac" enabled="true"
-        minBitRate="8000" maxBitRate="96000"
+        minBitRate="8000" maxBitRate="320000"
         minSampleRate="8000" maxSampleRate="48000"
         minChannels="1" maxChannels="6" />
 
