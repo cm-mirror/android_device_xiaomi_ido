@@ -97,8 +97,8 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.qcom.usb.rc
+    $(LOCAL_PATH)/rootdir/fstab.qcom:root/fstab.qcom \
+    $(LOCAL_PATH)/rootdir/init.qcom.usb.rc:root/init.qcom.usb.rc
 
 # RIL
 ifeq ($(QCPATH),)
