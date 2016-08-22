@@ -23,6 +23,7 @@ TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 TARGET_OTA_ASSERT_DEVICE := ido
 
 # Kernel
+TARGET_KERNEL_SOURCE := kernel/xiaomi/ido
 TARGET_KERNEL_CONFIG := wt88509_64-perf_defconfig
 
 # Bluetooth
@@ -70,7 +71,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # blockdev --getbsz /dev/block/mmcblk0p19
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.qcom
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
