@@ -16,7 +16,7 @@ persist.dpm.feature=3
 ro.sf.lcd_density=320
 
 # Factory reset protection
-ro.frp.pst=/dev/block/bootdevice/by-name/frp
+ro.frp.pst=/dev/block/bootdevice/by-name/config
 
 # GPS
 persist.gps.qc_nlp_in_use=1
