@@ -19,6 +19,8 @@ DEVICE_PATH := device/xiaomi/ido
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
+BLOCK_BASED_OTA=false
+
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := ido
 
