@@ -118,6 +118,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
+# USB ID
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.usb.id.mtp=ff40 \
+    ro.usb.id.mtp_adb=ff48 \
+    ro.usb.id.ptp=ff10 \
+    ro.usb.id.ptp_adb=ff18 \
+    ro.usb.id.ums=ff20 \
+    ro.usb.id.ums_adb=ff28 \
+    ro.usb.vid=05C6
+
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.adb.secure=0 \
