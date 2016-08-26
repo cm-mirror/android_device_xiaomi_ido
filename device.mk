@@ -55,7 +55,7 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8916 \
-    libmm-qcamera \
+    libxiaomi_camera \
     Snap
 
 # Consumerir
@@ -115,6 +115,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/data/qmi_config.xml:system/etc/data/qmi_config.xml \
     $(LOCAL_PATH)/configs/data/dsi_config.xml:system/etc/data/dsi_config.xml
 endif
+
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
 
 # Thermal
 PRODUCT_COPY_FILES += \

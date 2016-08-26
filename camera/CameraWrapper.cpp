@@ -21,15 +21,14 @@
 *
 */
 
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 
 #define LOG_TAG "CameraWrapper"
 #include <cutils/log.h>
 
-#include <hardware/hardware.h>
 #include <utils/threads.h>
 #include <utils/String8.h>
-#include <gui/SensorManager.h>
+#include <hardware/hardware.h>
 #include "hardware/camera.h"
 #include <camera/Camera.h>
 #include <camera/CameraParameters.h>
@@ -50,15 +49,15 @@ static struct hw_module_methods_t camera_module_methods = {
 
 camera_module_t HAL_MODULE_INFO_SYM = {
     .common = {
-        .tag = HARDWARE_MODULE_TAG,
-        .module_api_version = CAMERA_MODULE_API_VERSION_1_0,
-        .hal_api_version = HARDWARE_HAL_API_VERSION,
-        .id = CAMERA_HARDWARE_MODULE_ID,
-        .name = "MSM8916 Camera Wrapper",
-        .author = "The CyanogenMod Project",
-        .methods = &camera_module_methods,
-        .dso = NULL, /* remove compilation warnings */
-        .reserved = {0}, /* remove compilation warnings */
+         .tag = HARDWARE_MODULE_TAG,
+         .module_api_version = CAMERA_MODULE_API_VERSION_1_0,
+         .hal_api_version = HARDWARE_HAL_API_VERSION,
+         .id = CAMERA_HARDWARE_MODULE_ID,
+         .name = "HM 3 Camera Wrapper",
+         .author = "The CyanogenMod Project",
+         .methods = &camera_module_methods,
+         .dso = NULL, /* remove compilation warnings */
+         .reserved = {0}, /* remove compilation warnings */
     },
     .get_number_of_cameras = camera_get_number_of_cameras,
     .get_camera_info = camera_get_camera_info,
@@ -94,16 +93,10 @@ static int check_vendor_module()
     rv = hw_get_module_by_class("camera", "vendor",
             (const hw_module_t**)&gVendorModule);
     if (rv)
-        ALOGE("failed to open vendor camera module", __FUNCTION__);
+        ALOGE("failed to open vendor camera module");
+    else
+        ALOGV("success opening vendor camera module");
     return rv;
-}
-
-static bool can_talk_to_sensormanager()
-{
-    android::SensorManager& sensorManager(
-            android::SensorManager::getInstanceForPackage(android::String16("camera")));
-    android::Sensor const * const * sensorList;
-    return sensorManager.getSensorList(&sensorList) >= 0;
 }
 
 static char *camera_fixup_getparams(int id, const char *settings)
@@ -120,8 +113,6 @@ static char *camera_fixup_getparams(int id, const char *settings)
     ALOGV("%s: fixed parameters:", __FUNCTION__);
     params.dump();
 #endif
-
-    params.set("scene-mode-values", "auto");
 
     android::String8 strParams = params.flatten();
     char *ret = strdup(strParams.string());
@@ -493,11 +484,6 @@ static int camera_device_open(const hw_module_t *module, const char *name,
     if (name != NULL) {
         if (check_vendor_module())
             return -EINVAL;
-
-        if (!can_talk_to_sensormanager()) {
-            ALOGE("Waiting for sensor service failed.");
-            return android::NO_INIT;
-        }
 
         cameraid = atoi(name);
         num_cameras = gVendorModule->get_number_of_cameras();

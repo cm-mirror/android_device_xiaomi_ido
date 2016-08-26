@@ -27,6 +27,8 @@
 
 on boot
 
+    export LD_SHIM_LIBS "/system/lib/hw/camera.vendor.msm8916.so|libxiaomi_camera.so"
+
     # Notification LED
     chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/green/blink
@@ -34,3 +36,10 @@ on boot
     chown system system /sys/class/leds/red/led_time
     chown system system /sys/class/leds/green/led_time
     chown system system /sys/class/leds/blue/led_time
+
+service SensorCali /system/bin/SensorCali
+    user root
+    oneshot
+    disabled
+    on property:ril.sensor_read="right"
+    start SensorCali

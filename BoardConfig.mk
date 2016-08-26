@@ -31,11 +31,12 @@ TARGET_KERNEL_CONFIG := wt88509_64-perf_defconfig
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
 # Camera
-BOARD_CAMERA_SENSORS := s5k3l8 ov13853_q13853a ov5670_q5v41b s5k5e8
-COMMON_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
-TARGET_USE_VENDOR_CAMERA_EXT := true
 USE_DEVICE_SPECIFIC_CAMERA := true
+# Force camera module to be compiled only in 32-bit mode on 64-bit systems
+# Once camera module can run in the native mode of the system (either
+# 32-bit or 64-bit), the following line should be deleted
 BOARD_QTI_CAMERA_32BIT_ONLY := true
+COMMON_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 
 # CMHW
 BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/cmhw
