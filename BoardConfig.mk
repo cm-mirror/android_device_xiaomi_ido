@@ -25,7 +25,7 @@ TARGET_OTA_ASSERT_DEVICE := ido
 # Kernel
 BOARD_KERNEL_CMDLINE := console=115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 sched_enable_hmp=1 androidboot.selinux=permissive
 TARGET_KERNEL_SOURCE := kernel/xiaomi/ido
-TARGET_KERNEL_CONFIG := cyanogenmod_ido_defconfig
+TARGET_KERNEL_CONFIG := wt88509_64-perf_defconfig
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth

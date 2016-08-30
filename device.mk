@@ -55,8 +55,18 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8916 \
-    libxiaomi_camera \
+    libmm-camera \
     Snap
+
+# Shim libraries
+PRODUCT_PACKAGES += \
+    libshim_camera 
+
+# Compatibility
+PRODUCT_PACKAGES += \
+    libboringssl-compat \
+    libshim_camera_post_mediaserver \
+    libstlport
 
 # Consumerir
 PRODUCT_PACKAGES += \
