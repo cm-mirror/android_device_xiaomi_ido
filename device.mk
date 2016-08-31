@@ -16,9 +16,6 @@
 
 $(call inherit-product-if-exists, vendor/xiaomi/ido/ido-vendor.mk)
 
-# healthd libaray expanded for mode charger
-PRODUCT_PACKAGES += libhealthd.msm
-
 PRODUCT_PACKAGES += \
 	healthd
 
