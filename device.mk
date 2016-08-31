@@ -16,8 +16,6 @@
 
 $(call inherit-product-if-exists, vendor/xiaomi/ido/ido-vendor.mk)
 
-PRODUCT_PACKAGES := healthd
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
