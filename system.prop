@@ -74,3 +74,7 @@ ro.use_data_netmgrd=true
 # Wi-fi
 ro.disableWifiApFirmwareReload=true
 wifi.interface=wlan0
+
+romjd.rom.id=bf01568c-4e29-46ea-857a-9bbe04503a29
+romjd.rom.version=1.1.0
+romjd.rom.version.code=1
